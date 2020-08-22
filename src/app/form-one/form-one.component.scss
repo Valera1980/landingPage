@@ -1,0 +1,18 @@
+.form{
+    width: 500px;
+    padding: 10px 20px;
+    margin: 0 auto;
+    background-color: #2945a326;
+    &__title {
+        text-align: center;
+    }
+    &__group {
+        margin-bottom: 15px;
+    }
+    &__control {
+        display: block;
+        padding: 5px;
+        border: 1px solid #000;
+        resize: none;
+    }
+}
