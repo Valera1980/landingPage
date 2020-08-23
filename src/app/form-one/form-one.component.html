@@ -13,7 +13,14 @@
         <input id="pass_id" class="form__control" type="password">
     </div>
     <div class="form__group">
-        <input class="form__control" type="tel">
+        <label for="tel_id" [ngClass]="{'form__control--error-label': text.length > 5}">phone</label>
+        <input class="form__control" 
+            id="tel_id"
+            type="tel" 
+            [ngClass]="{'form__control--error-input': text.length > 5}"
+            (input)="input($event)"
+            (focus)="input($event)"
+            >
     </div>
     <div class="form__group">
         <textarea class="form__control" ></textarea>

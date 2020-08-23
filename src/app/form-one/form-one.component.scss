@@ -10,9 +10,28 @@
         margin-bottom: 15px;
     }
     &__control {
+        box-sizing: border-box;
         display: block;
-        padding: 5px;
+        width: 100%;
+        padding: 8px;
         border: 1px solid #000;
         resize: none;
+        border-radius: 3px;
+        &:hover{
+            border: 1px solid #3e0bf3;
+        }
+        &:focus{
+            outline: none;
+        }
+        &--error-input{
+            border: 1.2px solid #f30505;
+            color: #f30505;
+            &:hover{
+                border: 1px solid #f30505;
+            }
+        }
+        &--error-label{
+            color: #f30505;
+        }
     }
 }

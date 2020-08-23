@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormOneComponent implements OnInit {
 
+  text = '';
   constructor() { }
 
   ngOnInit(): void {
+  }
+  input(e: any): void {
+    this.text = e.target.value;
   }
 
 }

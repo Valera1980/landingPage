@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;;
+}
+
+.header {
+    height: 95vh;
+    background-image:linear-gradient(
+        to right bottom,
+        rgba(186, 217, 248, 0.4),
+        rgba(148, 195, 241, 0.4)
+    ),
+     url('../../assets/img/hong-kong.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:top;
+    padding: 30px;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    
+}

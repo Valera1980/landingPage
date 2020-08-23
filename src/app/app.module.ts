@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormOneComponent } from './form-one/form-one.component';
+import { LandComponent } from './land/land.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormOneComponent
+    FormOneComponent,
+    LandComponent
   ],
   imports: [
     BrowserModule,
