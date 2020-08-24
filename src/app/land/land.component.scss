@@ -1,10 +1,6 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;;
-}
 
 .header {
+    position: relative;
     height: 95vh;
     background-image:linear-gradient(
         to right bottom,
@@ -16,6 +12,32 @@
     background-size: cover;
     background-position:top;
     padding: 30px;
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-    
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+
+    &__logo-picture{
+        position: relative;
+        top:10px;
+        left:10px;
+        width: 100px;
+        height: 100px;
+    }
+    &__logo-text{
+        position: absolute;
+        top:50%;
+        left: 50%;
+        color: #fff;
+        text-transform: uppercase;
+        transform: translate(-50%, -50%);
+    }
+    &__logo-text-main{
+       display: block;
+       font-size: 60px;
+       font-weight: 400;
+       letter-spacing: 35px;
+    }
+    &__logo-text-sub{
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 6px;
+    }
 }
