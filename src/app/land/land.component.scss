@@ -1,43 +1,147 @@
-
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    position: relative;
+}
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.btn:hover::after {
+    // background-color: #fff;
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+.btn:active {
+    transform: translateY(-1px);
+}
+.btn:after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+}
 .header {
     position: relative;
     height: 95vh;
-    background-image:linear-gradient(
-        to right bottom,
-        rgba(186, 217, 248, 0.4),
-        rgba(148, 195, 241, 0.4)
-    ),
-     url('../../assets/img/hong-kong.jpg');
+    background-image: linear-gradient(to right bottom, rgba(186, 217, 248, 0.4), rgba(148, 195, 241, 0.4)),
+        url("../../assets/img/hong-kong.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position:top;
+    background-position: top;
     padding: 30px;
     clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
 
-    &__logo-picture{
+    &__logo-picture {
         position: relative;
-        top:10px;
-        left:10px;
+        top: 10px;
+        left: 10px;
         width: 100px;
         height: 100px;
+        animation-name: moveToBottom;
+        animation-duration: 1s;
+        animation-timing-function: ease-in;
     }
-    &__logo-text{
+    &__logo-text {
         position: absolute;
-        top:50%;
+        top: 50%;
         left: 50%;
         color: #fff;
         text-transform: uppercase;
         transform: translate(-50%, -50%);
+        backface-visibility: hidden;
+        text-align: center;
     }
-    &__logo-text-main{
-       display: block;
-       font-size: 60px;
-       font-weight: 400;
-       letter-spacing: 35px;
+    &__logo-text-main {
+        display: block;
+        font-size: 60px;
+        font-weight: 400;
+        letter-spacing: 35px;
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+
+        // animation-delay: 1s;
     }
-    &__logo-text-sub{
+    &__logo-text-sub {
+        display: block;
         font-size: 15px;
         font-weight: 700;
         letter-spacing: 6px;
+        animation-name: moveInRight;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+        margin-bottom: 60px;
+    }
+    &__main-btn {
+        position: relative;
+        display: block;
+        background-color: #fff;
+        color: #777;
+        border-radius: 100px;
+        transition: all 0.2s;
+    }
+    &__main-btn:after {
+        background-color: #fff;
+    }
+    &__main-btn-animated {
+        animation: moveInBottom .5s ease-out .75s;
+        animation-fill-mode: backwards;
+    }
+    @keyframes moveInLeft {
+        0% {
+            opacity: 0;
+            transform: translateX(-100px);
+        }
+        80% {
+            transform: translateX(10px);
+        }
+        100% {
+            opacity: 1;
+            transform: translate(0);
+        }
+    }
+    @keyframes moveInRight {
+        0% {
+            opacity: 0;
+            transform: translateX(0);
+        }
+        80% {
+            transform: translateX(-10px);
+        }
+        100% {
+            opacity: 1;
+            transform: translate(0);
+        }
+    }
+    @keyframes moveToBottom {
+        0% {
+            opacity: 0;
+        }
+        80% {
+            opacity: 0.5;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    @keyframes moveInBottom {
+        0% {
+            opacity: 0;
+            transform:translateY(40px)
+        }
+        100% {
+            opacity: 1;
+            transform: translate(0);
+        }
     }
 }
